@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 67,
-  "iteration": 1663616690269,
+  "iteration": 1663775017024,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -109,6 +109,13 @@
           "color": {
             "mode": "thresholds"
           },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://git.cnj.jus.br/ia/docs/-/wikis/home"
+            }
+          ],
           "mappings": [
             {
               "options": {
@@ -141,7 +148,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 3,
+        "h": 2,
         "w": 17,
         "x": 2,
         "y": 0
@@ -160,7 +167,7 @@
           "values": false
         },
         "text": {
-          "valueSize": 60
+          "valueSize": 50
         },
         "textMode": "value"
       },
@@ -287,6 +294,130 @@
       ],
       "transparent": true,
       "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "6qLTrjQGk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://git.cnj.jus.br/ia/docs/-/wikis/home"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "https://git.cnj.jus.br/ia/docs/-/wikis/home"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "https://git.cnj.jus.br/ia/docs/-/wikis/home"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "light-blue",
+                "value": null
+              },
+              {
+                "color": "light-blue",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 17,
+        "x": 2,
+        "y": 2
+      },
+      "id": 54,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "6qLTrjQGk"
+          },
+          "functions": [],
+          "group": {
+            "filter": "/.*/"
+          },
+          "host": {
+            "filter": "Zabbix Server"
+          },
+          "item": {
+            "filter": "ICMP ping"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "options": {
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
     },
     {
       "datasource": {
@@ -1078,7 +1209,7 @@
         "x": 10,
         "y": 5
       },
-      "id": 49,
+      "id": 46,
       "interval": "5m",
       "options": {
         "colorMode": "background",
@@ -1092,7 +1223,6 @@
           "fields": "",
           "values": false
         },
-        "text": {},
         "textMode": "auto"
       },
       "pluginVersion": "9.0.0",
@@ -1107,7 +1237,7 @@
           },
           "functions": [
             {
-              "$$hashKey": "object:322",
+              "$$hashKey": "object:353",
               "def": {
                 "category": "Filter",
                 "defaultParams": [
@@ -1131,7 +1261,7 @@
               "text": "sortSeries(asc)"
             },
             {
-              "$$hashKey": "object:327",
+              "$$hashKey": "object:358",
               "added": false,
               "def": {
                 "category": "Alias",
@@ -1152,13 +1282,13 @@
                 ]
               },
               "params": [
-                "/(.*)Pessoas/",
+                "/(.*)Processos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Pessoas/, $1)"
+              "text": "replaceAlias(/(.*)Processos/, $1)"
             },
             {
-              "$$hashKey": "object:323",
+              "$$hashKey": "object:354",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -1191,7 +1321,7 @@
             "filter": "$Host"
           },
           "item": {
-            "filter": "/Pessoas.*/"
+            "filter": "/Processos.*/"
           },
           "itemTag": {
             "filter": ""
@@ -1224,7 +1354,7 @@
           }
         }
       ],
-      "title": "Pessoas",
+      "title": "Processos",
       "type": "stat"
     },
     {
@@ -1410,7 +1540,7 @@
         "x": 10,
         "y": 8
       },
-      "id": 46,
+      "id": 49,
       "interval": "5m",
       "options": {
         "colorMode": "background",
@@ -1424,6 +1554,7 @@
           "fields": "",
           "values": false
         },
+        "text": {},
         "textMode": "auto"
       },
       "pluginVersion": "9.0.0",
@@ -1438,7 +1569,7 @@
           },
           "functions": [
             {
-              "$$hashKey": "object:353",
+              "$$hashKey": "object:322",
               "def": {
                 "category": "Filter",
                 "defaultParams": [
@@ -1462,7 +1593,7 @@
               "text": "sortSeries(asc)"
             },
             {
-              "$$hashKey": "object:358",
+              "$$hashKey": "object:327",
               "added": false,
               "def": {
                 "category": "Alias",
@@ -1483,13 +1614,13 @@
                 ]
               },
               "params": [
-                "/(.*)Processos/",
+                "/(.*)Pessoas/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Processos/, $1)"
+              "text": "replaceAlias(/(.*)Pessoas/, $1)"
             },
             {
-              "$$hashKey": "object:354",
+              "$$hashKey": "object:323",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -1522,7 +1653,7 @@
             "filter": "$Host"
           },
           "item": {
-            "filter": "/Processos.*/"
+            "filter": "/Pessoas.*/"
           },
           "itemTag": {
             "filter": ""
@@ -1555,7 +1686,7 @@
           }
         }
       ],
-      "title": "Processos",
+      "title": "Pessoas",
       "type": "stat"
     },
     {
@@ -5687,7 +5818,7 @@
       "options": {
         "barRadius": 0,
         "barWidth": 0.97,
-        "colorByField": "SLA Codex IA SLA",
+        "colorByField": "Value",
         "groupWidth": 0.7,
         "legend": {
           "calcs": [],
@@ -5720,7 +5851,7 @@
           "host": {
             "filter": ""
           },
-          "itServiceFilter": "SLA Codex IA",
+          "itServiceFilter": "$Host",
           "item": {
             "filter": ""
           },
@@ -5775,7 +5906,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Codex PJE 1G",
           "value": "Codex PJE 1G"
         },
@@ -5813,6 +5944,6 @@
   "timezone": "",
   "title": "Status do Codex IA",
   "uid": "RKM3YEi4k",
-  "version": 65,
+  "version": 72,
   "weekStart": ""
 }

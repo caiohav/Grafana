@@ -2,7 +2,7 @@
 
 ## Passos iniciais
 
-Após importar o primeiro passo será ajustar a variável **$Host** para condizer com os hosts criados no Zabbix.
+Após importar, o primeiro passo será ajustar a variável **$Host** para condizer com os hosts criados no Zabbix.
 ![Variáveis](https://github.com/caiohav/Grafana/blob/757df01226b9f6fc7a0b78042ab71a668c66a9a7/Codex%20CNJ/img/Vari%C3%A1veis.png)
 
 ## Painel "Relatório de disponibilidade..."

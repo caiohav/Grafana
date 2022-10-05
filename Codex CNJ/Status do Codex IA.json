@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 67,
-  "iteration": 1663872641997,
+  "iteration": 1664975684055,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -443,7 +443,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Documentos pendentes de processamento"
+              "options": "Pendentes"
             },
             "properties": [
               {
@@ -458,7 +458,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": " Documentos totais"
+              "options": "Processados"
             },
             "properties": [
               {
@@ -513,29 +513,34 @@
           "functions": [
             {
               "def": {
+                "name": "sumSeries",
+                "category": "Aggregate",
+                "params": [],
+                "defaultParams": []
+              },
+              "params": [],
+              "text": "sumSeries()",
+              "added": false,
+              "$$hashKey": "object:68"
+            },
+            {
+              "def": {
+                "name": "setAlias",
                 "category": "Alias",
-                "defaultParams": [
-                  "/(.*)/",
-                  "$1"
-                ],
-                "name": "replaceAlias",
                 "params": [
                   {
-                    "name": "regexp",
-                    "type": "string"
-                  },
-                  {
-                    "name": "newAlias",
+                    "name": "alias",
                     "type": "string"
                   }
-                ]
+                ],
+                "defaultParams": []
               },
               "params": [
-                "/(.*)Codex PJE (1|2)G\\:/",
-                "$1"
+                "Processados"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\:/, $1)",
-              "$$hashKey": "object:1366"
+              "text": "setAlias(Processados)",
+              "added": false,
+              "$$hashKey": "object:66"
             }
           ],
           "group": {
@@ -546,7 +551,7 @@
             "filter": "$Host"
           },
           "item": {
-            "filter": "Documentos totais"
+            "filter": "/Documentos (processados com sucesso|excluídos do processamento|com falha de processamento)$/"
           },
           "itemTag": {
             "filter": ""
@@ -589,29 +594,22 @@
           "functions": [
             {
               "def": {
+                "name": "setAlias",
                 "category": "Alias",
-                "defaultParams": [
-                  "/(.*)/",
-                  "$1"
-                ],
-                "name": "replaceAlias",
                 "params": [
                   {
-                    "name": "regexp",
-                    "type": "string"
-                  },
-                  {
-                    "name": "newAlias",
+                    "name": "alias",
                     "type": "string"
                   }
-                ]
+                ],
+                "defaultParams": []
               },
               "params": [
-                "/(.*)Codex PJE (1|2)G\\: /",
-                "$1"
+                "Pendentes"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: /, $1)",
-              "$$hashKey": "object:1345"
+              "text": "setAlias(Pendentes)",
+              "added": false,
+              "$$hashKey": "object:70"
             }
           ],
           "group": {
@@ -781,6 +779,21 @@
                 }
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": " pendentes de comunicação"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "red",
+                  "mode": "fixed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -818,6 +831,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:2328",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -840,8 +854,7 @@
                 "/(.*)Codex PJE (1|2)G\\: Documentos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)",
-              "$$hashKey": "object:1120"
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
             }
           ],
           "group": {
@@ -893,6 +906,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:2349",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -915,8 +929,7 @@
                 "/(.*)Codex PJE (1|2)G\\: Documentos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)",
-              "$$hashKey": "object:1141"
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
             }
           ],
           "group": {
@@ -969,6 +982,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:2370",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -991,8 +1005,7 @@
                 "/(.*)Codex PJE (1|2)G\\: Documentos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)",
-              "$$hashKey": "object:1162"
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
             }
           ],
           "group": {
@@ -1045,6 +1058,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:2391",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -1067,8 +1081,7 @@
                 "/(.*)Codex PJE (1|2)G\\: Documentos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)",
-              "$$hashKey": "object:1183"
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
             }
           ],
           "group": {
@@ -1121,6 +1134,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:2412",
               "def": {
                 "category": "Alias",
                 "defaultParams": [
@@ -1143,8 +1157,7 @@
                 "/(.*)Codex PJE (1|2)G\\: Documentos/",
                 "$1"
               ],
-              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)",
-              "$$hashKey": "object:1204"
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
             }
           ],
           "group": {
@@ -1171,6 +1184,158 @@
           },
           "queryType": "0",
           "refId": "E",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "6qLTrjQGk"
+          },
+          "functions": [
+            {
+              "$$hashKey": "object:2439",
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)Codex PJE (1|2)G\\: Documentos/",
+                "$1"
+              ],
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Codex"
+          },
+          "hide": false,
+          "host": {
+            "filter": "$Host"
+          },
+          "item": {
+            "filter": "Documentos comunicados com sucesso"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "options": {
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        },
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "6qLTrjQGk"
+          },
+          "functions": [
+            {
+              "$$hashKey": "object:2466",
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                "/(.*)Codex PJE (1|2)G\\: Documentos/",
+                "$1"
+              ],
+              "text": "replaceAlias(/(.*)Codex PJE (1|2)G\\: Documentos/, $1)"
+            }
+          ],
+          "group": {
+            "filter": "Codex"
+          },
+          "hide": false,
+          "host": {
+            "filter": "$Host"
+          },
+          "item": {
+            "filter": "Documentos pendentes de comunicação"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "options": {
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "G",
           "resultFormat": "time_series",
           "table": {
             "skipEmptyValues": false
@@ -1672,6 +1837,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:38",
               "def": {
                 "category": "Transform",
                 "defaultParams": [
@@ -1694,10 +1860,10 @@
               "params": [
                 "-1"
               ],
-              "text": "scale(-1)",
-              "$$hashKey": "object:1399"
+              "text": "scale(-1)"
             },
             {
+              "$$hashKey": "object:39",
               "def": {
                 "category": "Transform",
                 "defaultParams": [],
@@ -1705,10 +1871,10 @@
                 "params": []
               },
               "params": [],
-              "text": "delta()",
-              "$$hashKey": "object:1400"
+              "text": "delta()"
             },
             {
+              "$$hashKey": "object:40",
               "def": {
                 "category": "Alias",
                 "defaultParams": [],
@@ -1723,8 +1889,7 @@
               "params": [
                 "Documentos pendentes"
               ],
-              "text": "setAlias(Documentos pendentes)",
-              "$$hashKey": "object:1401"
+              "text": "setAlias(Documentos pendentes)"
             }
           ],
           "group": {
@@ -1776,6 +1941,7 @@
           },
           "functions": [
             {
+              "$$hashKey": "object:63",
               "def": {
                 "category": "Transform",
                 "defaultParams": [],
@@ -1783,10 +1949,10 @@
                 "params": []
               },
               "params": [],
-              "text": "delta()",
-              "$$hashKey": "object:1424"
+              "text": "delta()"
             },
             {
+              "$$hashKey": "object:64",
               "def": {
                 "category": "Alias",
                 "defaultParams": [],
@@ -1801,8 +1967,7 @@
               "params": [
                 "Documentos totais"
               ],
-              "text": "setAlias(Documentos totais)",
-              "$$hashKey": "object:1425"
+              "text": "setAlias(Documentos totais)"
             }
           ],
           "group": {
@@ -1899,8 +2064,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -2039,8 +2203,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -2179,8 +2342,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -2319,8 +2481,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -2430,8 +2591,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
-                "value": null
+                "color": "text"
               }
             ]
           }
@@ -2569,8 +2729,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
-                "value": null
+                "color": "text"
               }
             ]
           }
@@ -2708,8 +2867,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
-                "value": null
+                "color": "text"
               }
             ]
           }
@@ -2847,8 +3005,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "text",
-                "value": null
+                "color": "text"
               }
             ]
           }
@@ -3011,8 +3168,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3146,8 +3302,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3305,8 +3460,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3436,8 +3590,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3552,8 +3705,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3749,8 +3901,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3921,8 +4072,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4039,8 +4189,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4184,8 +4333,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4329,8 +4477,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4500,8 +4647,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4697,8 +4843,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4842,8 +4987,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5044,8 +5188,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5216,8 +5359,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5334,8 +5476,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5480,8 +5621,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5655,8 +5795,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -5805,6 +5944,6 @@
   "timezone": "",
   "title": "Status do Codex IA",
   "uid": "RKM3YEi4k",
-  "version": 77,
+  "version": 85,
   "weekStart": ""
 }
